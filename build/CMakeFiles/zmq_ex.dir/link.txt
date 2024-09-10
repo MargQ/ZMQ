@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/zmq_ex.dir/src/server.c.o CMakeFiles/zmq_ex.dir/src/client.c.o -o zmq_ex   -L/libzmq  -L/czmq  -Wl,-rpath,/libzmq:/czmq:/usr/local/lib /usr/local/lib/libzmq.so /usr/local/lib/libczmq.so 
