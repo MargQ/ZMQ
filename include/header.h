@@ -7,5 +7,6 @@
 #include <unistd.h>
 #include <string.h>
 #include <assert.h>
+#include <pcap.h>
 
 #endif // HEADER_H

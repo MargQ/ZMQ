@@ -14,7 +14,11 @@ set(HEADERS
     include/header.h
 )
 
-# Библиотека czmq
+# Найти библиотеку PCAP через pkg-config
+find_library(PCAP_LIBRARY pcap) 
+find_path(PCAP_INCLUDE_DIR pcap.h)
+
+# Библиотека zmq
 find_library(LIBZMQ_LIBRARY zmq)
 find_path(LIBZMQ_INCLUDE_DIR zmq.h) 
 
@@ -36,3 +40,4 @@ add_executable(client ${CLIENT_SOURCES})
 # Линковка с библиотеками libzmq и czmq 
 target_link_libraries(server ${LIBZMQ_LIBRARY} ${CZMQ_LIBRARY})
 target_link_libraries(client ${LIBZMQ_LIBRARY} ${CZMQ_LIBRARY})
+target_link_libraries(server ${LIBZMQ_LIBRARY} ${PCAP_LIBRARY})
